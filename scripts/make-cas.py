@@ -181,7 +181,7 @@ def make_hash_symlink(CA: CAPaths):
     The cert file must already exist, otherwise we cannot tell what the hashes
     are.
     """
-    longname = CA.get_commonName() + ".crt"
+    longname = CA.get_commonName() + ".pem"
     shutil.copy(CA.CA_crt, CA.certs_dir / longname)
     print(f"Cert copied to {CA.certs_dir / longname}")
     hash_path = CA.certs_dir / (CA.get_subject_hash() + ".0")
