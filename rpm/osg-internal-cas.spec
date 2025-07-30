@@ -1,5 +1,5 @@
 Name:           osg-internal-cas
-Version:        2
+Version:        3
 Release:        1%{?dist}
 Summary:        OSG Internal CA certs
 
@@ -32,6 +32,9 @@ mv certs/*.crt $RPM_BUILD_ROOT/usr/share/%{name}
 /usr/share/%{name}
 
 %changelog
+* Wed Jul 30 2025 Mátyás Selmeci <mselmeci@wisc.edu> - 3-1
+- Add signing policy
+
 * Fri Jun 13 2025 Mátyás Selmeci <mselmeci@wisc.edu> - 2-1
 - Fix file extensions
 - Include cert chains
