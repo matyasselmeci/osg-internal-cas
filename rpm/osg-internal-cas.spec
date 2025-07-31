@@ -1,6 +1,6 @@
 Name:           osg-internal-cas
 Version:        3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        OSG Internal CA certs
 
 License:        Apache 2.0
@@ -23,6 +23,7 @@ exit 0
 mkdir -p $RPM_BUILD_ROOT/etc/grid-security/certificates
 mv certs/*.pem $RPM_BUILD_ROOT/etc/grid-security/certificates
 mv certs/*.0 $RPM_BUILD_ROOT/etc/grid-security/certificates
+mv certs/*.signing_policy $RPM_BUILD_ROOT/etc/grid-security/certificates
 mkdir -p $RPM_BUILD_ROOT/usr/share/%{name}
 mv certs/*.crt $RPM_BUILD_ROOT/usr/share/%{name}
 
@@ -32,6 +33,9 @@ mv certs/*.crt $RPM_BUILD_ROOT/usr/share/%{name}
 /usr/share/%{name}
 
 %changelog
+* Thu Jul 31 2025 Mátyás Selmeci <mselmeci@wisc.edu> - 3-2
+- Fix adding signing_policy files to RPM
+
 * Wed Jul 30 2025 Mátyás Selmeci <mselmeci@wisc.edu> - 3-1
 - Add signing policy
 
